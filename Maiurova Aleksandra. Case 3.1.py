@@ -16,3 +16,15 @@ saved_money+=receipts[3].get(sweets[1],0)
 saved_money+=receipts[4].get(sweets[0],0)
 saved_money+=receipts[4].get(sweets[1],0)
 print(f'Дядя Вова сможет сэкономить в следующем месяце {saved_money} рубл(я/ей).')
+
+# Как оптимизировать
+saved_money = 0
+current_receipt = 0
+#current_sweet = 0
+while current_receipt < len(receipts):
+  current_sweet = 0
+  while current_sweet < len(sweets):
+      saved_money += receipts[current_receipt].get(sweets[current_sweet], 0)
+      current_sweet += 1
+  current_receipt += 1
+print(f'Дядя Вова сможет сэкономить в следующем месяце {saved_money} рубл(я/ей).')
